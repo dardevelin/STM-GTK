@@ -115,3 +115,14 @@ static void config_btn_search(void)
 	/* any default signal handler should be defined here */
 	/*###################################################*/
 }/*end config_btn_search */
+
+static void config_btn_download(void)
+{
+	gtk_button_set_label( GTK_BUTTON( btn_download), STM_BTN_DOWNLOAD_STR);
+	
+	gtk_widget_set_hexpand( GTK_WIDGTE( btn_download ), TRUE);
+	gtk_widget_set_vexpand( GTK_WIDGET( btn_download ), FALSE);
+	
+	/* anu default signal handler should be defined here */
+	/*###################################################*/
+}/*end config_btn_download */
