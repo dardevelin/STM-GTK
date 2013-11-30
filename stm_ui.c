@@ -120,9 +120,29 @@ static void config_btn_download(void)
 {
 	gtk_button_set_label( GTK_BUTTON( btn_download), STM_BTN_DOWNLOAD_STR);
 	
-	gtk_widget_set_hexpand( GTK_WIDGTE( btn_download ), TRUE);
+	gtk_widget_set_hexpand( GTK_WIDGET( btn_download ), TRUE);
 	gtk_widget_set_vexpand( GTK_WIDGET( btn_download ), FALSE);
 	
-	/* anu default signal handler should be defined here */
+	/* any default signal handler should be defined here */
 	/*###################################################*/
 }/*end config_btn_download */
+
+static void config_btn_toggle_play(void)
+{
+	gtk_button_set_label( GTK_BUTTON( btn_toggle_play), STM_BTN_TOGGLE_PLAY_STR_0);
+	
+	gtk_widget_set_hexpand( GTK_WIDGET( btn_toggle_play ), TRUE);
+	gtk_widget_set_vexpand( GTK_WIDGET( btn_toggle_play ), FALSE);
+	
+	
+	/* since this feature will only be available in future versions 
+	 * don't let the user interact with the button.
+	 */
+	gtk_widget_set_sensitive( GTK_WIDGET( btn_toggle_play ), FALSE);
+	
+	/* in any case, let the user know the feature is not implemented */
+	gtk_widget_set_tooltip_markup( GTK_WIDGET( btn_toggle_play ),
+				       STM_NOTIMPLEMENTED_TOOLTIP_STR);
+	/* any default signal handler should be defined here */
+	/*###################################################*/
+}/*end config_btn_toggle_play */
