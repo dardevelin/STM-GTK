@@ -20,3 +20,29 @@
  */
 
 #include "stm_ui.h"
+
+
+static GtkWidget *main_window;
+static GtkWidget *txt_entry_search;
+static GtkWidget *btn_search;
+static GtkWidget *btn_download;
+static GtkWidget *btn_toggle_play;
+
+static GtkWidget *main_grid;
+static GtkWidget *top_grid;
+static GtkWidgte *middle_grid;
+static GtkWidget *bottom_grid;
+
+static GtkWidget *playlist_treeview;
+static GtkListStore treeview_store;
+static GtkCellRenderer *cell;
+static GtkTreeViewColumn *column;
+
+static GtkWidget *list;
+static GtkListStore *store;
+
+/* creates all widgets with base definitions*/
+static int stm_ui_init()
+{
+	return 1;
+}
