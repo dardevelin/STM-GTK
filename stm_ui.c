@@ -118,6 +118,10 @@ static void config_btn_search(void)
 	/*###################################################*/
 }/*end config_btn_search */
 
+static void config_playlist_treeview(void)
+{
+}/*end config_playlist_treeview */
+
 static void config_btn_download(void)
 {
 	gtk_button_set_label( GTK_BUTTON( btn_download), STM_BTN_DOWNLOAD_STR);
@@ -210,6 +214,9 @@ int fakemain(int argc, char **argv)
 
 	config_txt_entry_search();
 	config_btn_search();
+	
+	config_playlist_treeview();
+	
 	config_btn_download();
 	config_btn_toggle_play();
 	
