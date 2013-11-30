@@ -129,7 +129,8 @@ static void config_btn_download(void)
 
 static void config_btn_toggle_play(void)
 {
-	gtk_button_set_label( GTK_BUTTON( btn_toggle_play), STM_BTN_TOGGLE_PLAY_STR_0);
+	gtk_button_set_label( GTK_BUTTON( btn_toggle_play), 
+			      STM_BTN_TOGGLE_PLAY_STR_0);
 	
 	gtk_widget_set_hexpand( GTK_WIDGET( btn_toggle_play ), TRUE);
 	gtk_widget_set_vexpand( GTK_WIDGET( btn_toggle_play ), FALSE);
@@ -163,11 +164,14 @@ static void assemble_ui(void)
 	 *                   1); //height
 	 */
 	
-	gtk_grid_attach( GTK_GRID( main_grid ), GTK_WIDGET( top_grid ), 0, 0, 1, 1);
+	gtk_grid_attach( GTK_GRID( main_grid ), 
+			 GTK_WIDGET( top_grid ), 0, 0, 1, 1);
 	
-	gtk_grid_attach( GTK_GRID( main_grid ), GTK_WIDGET( middle_grid ), 0, 1, 1, 1);
+	gtk_grid_attach( GTK_GRID( main_grid ), 
+			 GTK_WIDGET( middle_grid ), 0, 1, 1, 1);
 	
-	gtk_grid_attach( GTK_GRID( main_grid ), GTK_WIDGET( bottom_grid ), 0, 2, 1, 1);
+	gtk_grid_attach( GTK_GRID( main_grid ), 
+			 GTK_WIDGET( bottom_grid ), 0, 2, 1, 1);
 	
 	/* add control widgets to the respective positions */
 	
@@ -175,7 +179,8 @@ static void assemble_ui(void)
 	gtk_grid_attach( GTK_GRID( top_grid ),
 			 GTK_WIDGET( txt_entry_search ), 0, 0, 1, 1);
 	
-	gtk_grid_attach( GTK_GRID( top_grid ), GTK_WIDGET( btn_search ), 1, 0, 1, 1);
+	gtk_grid_attach( GTK_GRID( top_grid ), 
+			 GTK_WIDGET( btn_search ), 1, 0, 1, 1);
 	
 	/* middle_grid  control widgets */
 	gtk_grid_attach( GTK_GRID( middle_grid ), 
