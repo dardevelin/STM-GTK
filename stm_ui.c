@@ -82,7 +82,7 @@ static void config_main_window(void)
 	
 	gtk_window_set_title( GTK_WINDOW( main_window ),
 			      STM_MW_TITLE);
-}
+}/*end config_main_window */
 
 static void config_layout_grids(void)
 {
@@ -94,4 +94,14 @@ static void config_layout_grids(void)
 	
 	gtk_widget_set_hexpand( GTK_WIDGET( bottom_grid ), FALSE);
 	gtk_widget_set_vexpand( GTK_WIDGET( bottom_grid ), FALSE);
-}
+}/* end config_layout_grids */
+
+static void config_txt_entry_search(void)
+{
+	gtk_widget_set_hexpand( GTK_WIDGET( txt_entry_search ), TRUE);
+	gtk_widget_set_vexpand( GTK_WIDGET( txt_entry_search ), FALSE);
+	
+	gtk_widget_set_tooltip_markup( txt_entry_search,
+				       STM_TXT_ENTRY_SEARCH_TOOLTIP_STR);
+}/*end config_txt_entry_search */
+
