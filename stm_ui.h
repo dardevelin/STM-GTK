@@ -32,6 +32,6 @@
 #define STM_BTN_TOGGLE_PLAY_STR_0 "Play"
 #define STM_BTN_TOGGLE_PLAY_STR_1 "Pause"
 #define STM_TXT_ENTRY_SEARCH_TOOLTIP_STR "Type your mood here eg: calm"
-
-
+#define STM_NOTIMPLEMENTED_TOOLTIP_STR "Sorry, not implemented yet :)"
+/* function prototypes */
 #endif /* stm_ui.h | STM_UI_H */
