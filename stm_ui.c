@@ -105,3 +105,13 @@ static void config_txt_entry_search(void)
 				       STM_TXT_ENTRY_SEARCH_TOOLTIP_STR);
 }/*end config_txt_entry_search */
 
+static void config_btn_search(void)
+{
+	gtk_button_set_label( GTK_BUTTON( btn_search ), STM_BTN_SEARCH_STR);
+	
+	gtk_widget_set_hexpand( GTK_WIDGET( btn_search ), TRUE);
+	gtk_widget_set_vexpand( GTK_WIDGET( btn_search ), FALSE);
+	
+	/* any default signal handler should be defined here */
+	/*###################################################*/
+}/*end config_btn_search */
