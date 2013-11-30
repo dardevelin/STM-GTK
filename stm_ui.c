@@ -47,26 +47,28 @@ static int stm_ui_init()
 	main_window = gtk_window_new (GTK_WINDOW_TOPLEVEL);
 
 	/* create the grids that hold the control widgets */
-	main_grid = gtk_grid_new();
+	main_grid   = gtk_grid_new();
+	top_grid    = gtk_grid_new();
 	middle_grid = gtk_grid_new();
 	bottom_grid = gtk_grid_new();
 	
 	txt_entry_search = gtk_entry_new();
-	btn_search = gtk_button_new();
-	btn_download = gtk_button_new();
-	btn_toggle_play = gtk_button_new();
+	btn_search       = gtk_button_new();
+	btn_download     = gtk_button_new();
+	btn_toggle_play  = gtk_button_new();
 
 	/* necessary evil. lets check if everything was created */
 	if(!main_window) return -1;
 
 	if(!main_grid)   return -2;
-	if(!middle_grid) return -3;
-	if(!bottom_grid) return -4;
+	if(!top_grid)    return -3;
+	if(!middle_grid) return -4;
+	if(!bottom_grid) return -5;
 
-	if(!txt_entry_search) return -5;
-	if(!btn_search)       return -6;
-	if(!btn_download)     return -7;
-	if(!btn_toggle_play)  return -8;
+	if(!txt_entry_search) return -6;
+	if(!btn_search)       return -7;
+	if(!btn_download)     return -8;
+	if(!btn_toggle_play)  return -9;
 
 	return 1;
 
@@ -194,3 +196,27 @@ static void assemble_ui(void)
 			 GTK_WIDGET( btn_toggle_play ), 1, 0, 1, 1);
 
 }/*end assemble_ui */ 
+
+
+/*debuging purposes*/
+int fakemain(int argc, char **argv)
+{
+	gtk_init(&argc, &argv);
+	
+	stm_ui_init();
+
+	config_main_window();
+	config_layout_grids();
+
+	config_txt_entry_search();
+	config_btn_search();
+	config_btn_download();
+	config_btn_toggle_play();
+	
+	assemble_ui();
+	
+	gtk_widget_show_all(main_window);
+
+	gtk_main();
+	return 0;
+}
