@@ -146,3 +146,46 @@ static void config_btn_toggle_play(void)
 	/* any default signal handler should be defined here */
 	/*###################################################*/
 }/*end config_btn_toggle_play */
+
+static void assemble_ui(void)
+{
+	/* add the main grid to the root window */
+	gtk_container_add( GTK_CONTAINER( main_window ),
+			   GTK_WIDGET( main_grid ));
+	
+	/* add the sub-grids into the main_grid 
+	 * prototype: 
+	 * gtk_grid_attach ( GTK_GRID( the_grid ),
+	 *                   GTK_WIDGET( the_widget),
+	 *                   0,  //left
+	 *                   0,  //top
+	 *                   1,  //width
+	 *                   1); //height
+	 */
+	
+	gtk_grid_attach( GTK_GRID( main_grid ), GTK_WIDGET( top_grid ), 0, 0, 1, 1);
+	
+	gtk_grid_attach( GTK_GRID( main_grid ), GTK_WIDGET( middle_grid ), 0, 1, 1, 1);
+	
+	gtk_grid_attach( GTK_GRID( main_grid ), GTK_WIDGET( bottom_grid ), 0, 2, 1, 1);
+	
+	/* add control widgets to the respective positions */
+	
+	/* top_grid control widgets */
+	gtk_grid_attach( GTK_GRID( top_grid ),
+			 GTK_WIDGET( txt_entry_search ), 0, 0, 1, 1);
+	
+	gtk_grid_attach( GTK_GRID( top_grid ), GTK_WIDGET( btn_search ), 1, 0, 1, 1);
+	
+	/* middle_grid  control widgets */
+	gtk_grid_attach( GTK_GRID( middle_grid ), 
+			 GTK_WIDGET( playlist_treeview ), 0, 0, 1, 1);
+	
+	/* bottom_grid control widgets */
+	gtk_grid_attach( GTK_GRID( bottom_grid ), 
+			 GTK_WIDGET( btn_download ), 0, 0, 1, 1);
+	
+	gtk_grid_attach( GTK_GRID( bottom_grid ),
+			 GTK_WIDGET( btn_toggle_play ), 1, 0, 1, 1);
+
+}/*end assemble_ui */ 
