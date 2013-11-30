@@ -72,9 +72,10 @@ static int stm_ui_init()
 
 }/* end stm_ui_init() */
 
-static void config_main_window()
+static void config_main_window(void)
 {
-	gtk_window_set_default_size( GTK_WINDOW( main_window ) );
+	gtk_window_set_default_size( GTK_WINDOW( main_window ), 
+				     STM_MW_WIDTH, STM_MW_HEIGHT );
 	
 	gtk_window_set_position( GTK_WINDOW( main_window ),
 				 GTK_WIN_POS_CENTER );
@@ -83,7 +84,7 @@ static void config_main_window()
 			      STM_MW_TITLE);
 }
 
-static void config_layout_grids()
+static void config_layout_grids(void)
 {
 	gtk_widget_set_hexpand( GTK_WIDGET( top_grid ), TRUE );
 	gtk_widget_set_vexpand( GTK_WIDGET( top_grid ), FALSE);
@@ -94,4 +95,3 @@ static void config_layout_grids()
 	gtk_widget_set_hexpand( GTK_WIDGET( bottom_grid ), FALSE);
 	gtk_widget_set_vexpand( GTK_WIDGET( bottom_grid ), FALSE);
 }
-
