@@ -34,12 +34,8 @@ static GtkWidget *middle_grid;
 static GtkWidget *bottom_grid;
 
 static GtkWidget *playlist_treeview;
-static GtkListStore treeview_store;
-static GtkCellRenderer *cell;
-static GtkTreeViewColumn *column;
+static GtkWidget *playlist_list;
 
-static GtkWidget *list;
-static GtkListStore *store;
 
 /* creates all base widgets */
 static int stm_ui_init()
@@ -120,6 +116,11 @@ static void config_btn_search(void)
 
 static void config_playlist_treeview(void)
 {
+	gtk_widget_set_hexpand( GTK_WIDGET( playlist_treeview ), TRUE);
+	gtk_widget_set_vexpand( GTK_WIDGET( playlist_treeview ), TRUE);
+
+	/* any default signal handler should be defined here */
+	/*###################################################*/	
 }/*end config_playlist_treeview */
 
 static void config_btn_download(void)
